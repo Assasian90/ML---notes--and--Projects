@@ -35,3 +35,34 @@ Lower_bound=Q1-1.5*IQR
 Upper_bound=Q3+1.5*IQR
 print("Lower_bound=",Lower_bound)
 print("upper_bound=",Upper_bound)
+
+
+-----------numpy---------
+
+
+import numpy as np
+data=np.array([4,6,8,8,9,10,10,11,12,12,13,14,15,18,30])
+print("dataset=",data)
+mean_val=np.mean(data)
+print("mean=",mean_val)
+median_val=np.median(data)
+print("median=",median_val)
+values,counts=np.unique(data,return_counts=True)
+modes=values[counts==counts.max()]
+print("mode=",modes.tolist())
+variance_val=np.var(data,ddof=1)
+std_dev_val=np.std(data,ddof=1)
+print("variance=",round(variance_val,2))
+print("stadard deviation=",round(std_dev_val,2))
+Q1=np.percentile(data,25)
+Q2=np.percentile(data,50)
+Q3=np.percentile(data,75)
+print("Q1=",Q1)
+print("Q2=",Q2)
+print("Q3=",Q3)
+IQR=Q3-Q1
+print("IQR=",IQR)
+lower_bound=Q1-1.5*IQR
+upper_bound=Q3+1.5*IQR
+print("Upper Bound=",upper_bound)
+print("Lower Bound=",lower_bound)
